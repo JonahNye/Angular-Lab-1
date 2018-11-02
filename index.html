@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ToDoApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+
+<body>
+
+    <section ng-controller="ToDoCtrl as $ctrl" class="app-section">
+        <h1>Nicholas Cage's TODO List</h1>
+        <p>NOT THE BEES!</p>
+        <form >
+            <input placeholder="Filter Nic's to-dos" type="text">
+
+            <ol>
+                <section ng-repeat="task in $ctrl.list track by $index">
+                    <li ng-class="{'completed': task.Completed === true}"><button ng-class="{'completed-btn': task.Completed === true}" id="btn-complete">Complete</button>{{ task.Task }}<i ng-class="{'completed-icon': task.Completed === true}" class="material-icons">clear</i></li>
+                </section>
+            </ol>
+
+
+
+            <input placeholder="Add your to-do" type="text" ng-model="$ctrl.item">
+            <button class="add-btn" type="button">Add</button>
+        </form>
+    </section>
+
+
+
+
+
+
+
+    <!-- <section ng-controller="CrazyCtrl as $ctrl" class="button-field"> -->
+    <!-- <button ng-click= "$ctrl.addWord();">Add Word</button> -->
+    <!-- <button ng-click="$ctrl.addPhrase();">Add Phrase</button> -->
+    <!-- <button ng-click="$ctrl.addCrazyWord();">Add Crazy Word</button> -->
+    <!-- <button ng-click="$ctrl.addCrazyPhrase();">Add Crazy Phrase</button> -->
+
+    <!-- <section ng-repeat="word in $ctrl.textToDisplay" -->
+    <!-- ng-class="{'big': word.styling === 'big', -->
+    <!-- 'small': word.styling === 'small', -->
+    <!-- 'crazy': word.styling === 'crazy', -->
+    <!-- 'scary': word.styling === 'scary'}"> -->
+    <!-- <p>{{word.text}}</p> -->
+    <!-- </section> -->
+    <!-- </section>  -->
+
+
+
+
+
+
+
+    <script src="https://code.angularjs.org/1.6.5/angular.js"></script> <!-- Always link this first-->
+    <script src="module.js"></script>
+    <script src="controller.js"></script>
+</body>
+
+</html>
